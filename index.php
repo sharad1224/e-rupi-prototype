@@ -1,0 +1,8 @@
+<?php $pageTitle='Home Dashboard'; include __DIR__.'/includes/header.php'; ?>
+<section class="hero"><div class="eyebrow mb-2">Voucher-based subsidy management</div><h1>Welcome to E-RUPI Portal</h1><p>One simple platform for subsidy voucher issuance, electricity bill payments, and transaction tracking. Select a module to continue.</p></section>
+<div class="row g-4">
+<?php $modules=[['🏦','IDBI Bank','Manage consumers and generate subsidy vouchers for eligible electricity bills.','idbi/dashboard.php','Open Bank Portal'],['▦','Admin Panel','Monitor consumers, bill details, subsidy vouchers and payment transactions.','admin/dashboard.php','Open Admin Panel'],['💳','Consumer Payment','Find your electricity bill using IVRS and apply an eligible voucher.','consumer/payment.php','Pay Electricity Bill'],['📋','Track Your Payment','Look up recent bill payment details, transaction status and receipt.','consumer/bill_status.php','Check Bill Status']];foreach($modules as $m): ?>
+<div class="col-md-6"><div class="module-card"><div class="module-icon"><?= $m[0] ?></div><h2><?= htmlspecialchars($m[1]) ?></h2><p><?= htmlspecialchars($m[2]) ?></p><a class="btn btn-brand" href="<?= htmlspecialchars($m[3]) ?>"><?= htmlspecialchars($m[4]) ?> →</a></div></div>
+<?php endforeach; ?></div>
+<section class="mt-5 panel"><div class="row align-items-center g-3"><div class="col-md-8"><h5 class="fw-bold mb-1">How it works</h5><div class="muted">IDBI issues voucher → Consumer checks IVRS → Applies voucher → Pays balance → Tracks receipt</div></div><div class="col-md-4 text-md-end"><span class="status">Phase  · R&D + Development</span></div></div></section>
+<?php include __DIR__.'/includes/footer.php'; ?>
